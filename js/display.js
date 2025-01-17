@@ -1,6 +1,8 @@
 export function displayProduct(products, containerDiv) {
     containerDiv.innerHTML = '';
 
+    console.log(products);
+
     for(const product of products) {
         const data = product.GetData();
         
@@ -17,8 +19,8 @@ export function displayProduct(products, containerDiv) {
         const title = document.createElement('h4');
         title.textContent = data.title;
 
-        const price = document.createElement('h5');
-        price.textContent = `Price: $${product.GetDiscountPrice().toFixed(2)}`;
+        const discountedPrice = document.createElement('h5');
+        discountedPrice.textContent = `Price: $${product.GetDiscountPrice().toFixed(2)}`;
 
         const stock = document.createElement('h5');
         stock.textContent = `Stock: ${data.stock}`;
@@ -31,7 +33,7 @@ export function displayProduct(products, containerDiv) {
             stock.textContent = `Stock: ${product.GetStock()}`;
         })
 
-        info.append(title, price, stock);
+        info.append(title, discountedPrice, stock);
 
         container.append(img, info, btn);
 

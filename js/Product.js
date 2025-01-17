@@ -46,4 +46,14 @@ export class Product{
         }
     }
 
+    GetCategory() {
+        return this.#category;
+    }
+
+    GetRating() {
+        return this.#rating;
+    }
+
 }
+
+//Categories, beauty, fragrances, furniture, groceries

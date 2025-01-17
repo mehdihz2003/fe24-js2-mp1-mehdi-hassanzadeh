@@ -7,10 +7,34 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/result_container.css">
+    <link rel="stylesheet" href="./css/header_style.css">
 
     <script src="./js/main.js" type="module"></script>
 </head>
 <body>
+    <header class="header">
+        <div class="left-section">
+            <select id="category">
+                <option value="">No category</option>
+                <option value="beauty">Beauty</option>
+                <option value="fragrances">Fragrances</option>
+                <option value="furnitue">Furniture</option>
+                <option value="groceries">Groceries</option>
+            </select>
+            
+            <input type="number" id="priceFilter" placeholder="Price filter" min="0">
+        </div>
+        
+        <div class="right-section">
+            <select id="sort">
+                <option value="priceAsc">Price - Ascending</option>
+                <option value="priceDesc">Price - Descending</option>
+                <option value="ratingAsc">Rating - Ascending</option>
+                <option value="ratingDesc">Rating - Descending</option>
+            </select>
+        </div>
+    </header>
+
     <div id="container"></div>
 </body>
 </html>
