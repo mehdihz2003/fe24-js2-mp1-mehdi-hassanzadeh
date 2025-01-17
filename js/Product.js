@@ -23,18 +23,37 @@ export class Product{
             imageURL: this.#imageURL,
             stock: this.#stock,
             price: this.#price,
-            discount: this.#discount,
             category: this.#category,
             rating: this.#rating,
         };
     }
 
+    GetDiscountPrice() {
+        return this.#calcDiscount();
+    }
+
     #calcDiscount() {
-        this.#price = this.#price * (1 - this.#discount)
+        return this.#price * (1 - this.#discount/100)
+    }
+
+    GetStock() {
+        return this.#stock;
     }
 
     updateStock() {
-        this.#stock--;
+        if(this.#stock > 0) {
+            this.#stock--;
+        }
+    }
+
+    GetCategory() {
+        return this.#category;
+    }
+
+    GetRating() {
+        return this.#rating;
     }
 
 }
+
+//Categories, beauty, fragrances, furniture, groceries
