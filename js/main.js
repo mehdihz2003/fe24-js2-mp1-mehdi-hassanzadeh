@@ -8,9 +8,7 @@ let productsData;
 let products = [];
 fetchDummyJSON()
   .then(data => {
-    productsData = data;
-    console.log(productsData);
-    
+    productsData = data;    
     for(let i = 0; i < productsData.length; i++) {
         const product = new Product(productsData[i]);
         products.push(product);
@@ -20,5 +18,3 @@ fetchDummyJSON()
   .catch(error => {
     console.error('Error fetching data:', error);
   });
-
-console.log(products);

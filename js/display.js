@@ -17,15 +17,23 @@ export function displayProduct(products, containerDiv) {
         const title = document.createElement('h4');
         title.textContent = data.title;
 
+        const price = document.createElement('h5');
+        price.textContent = `Price: $${product.GetDiscountPrice().toFixed(2)}`;
+
         const stock = document.createElement('h5');
         stock.textContent = `Stock: ${data.stock}`;
 
-        const price = document.createElement('h5');
-        price.textContent = `Price: $${product.GetDiscountPrice()}` ;
+        const btn = document.createElement('button');
+        btn.textContent = 'Add to cart';
+        btn.classList.add('result-button');
+        btn.addEventListener('click', event => {
+            product.updateStock();
+            stock.textContent = `Stock: ${product.GetStock()}`;
+        })
 
-        info.append(title, stock, price);
+        info.append(title, price, stock);
 
-        container.append(img, info);
+        container.append(img, info, btn);
 
         containerDiv.append(container);
     }

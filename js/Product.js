@@ -36,8 +36,14 @@ export class Product{
         return this.#price * (1 - this.#discount/100)
     }
 
+    GetStock() {
+        return this.#stock;
+    }
+
     updateStock() {
-        this.#stock--;
+        if(this.#stock > 0) {
+            this.#stock--;
+        }
     }
 
 }

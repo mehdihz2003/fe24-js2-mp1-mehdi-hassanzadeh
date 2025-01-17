@@ -16,3 +16,9 @@
 .result-info {
   font-size: 14px;
 }
+
+.result-button {
+  width: 90px;
+  height: 30px;
+  margin-left: auto;
+}
