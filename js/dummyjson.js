@@ -7,9 +7,7 @@ export async function fetchDummyJSON(){
         }
 
         const data = await response.json();
-
-        console.log(data.products);
-
+        
         return data.products;
     }
     catch (error) { 
